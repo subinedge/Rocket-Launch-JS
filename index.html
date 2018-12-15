@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Rocket Launch</title>
+  </head>
+  <body class="body-state1">
+    <div class="left">
+      <div class="state1">
+        <h1>Space Y Rocket Launch</h1>
+        <a href="#" class="button" onclick="changeState(2)">LAUNCH ROCKET</a>
+      </div>
+
+      <div class="state2">
+        <h1 id="countDown">10</h1>
+        <a href="#" class="button" onclick="changeState(1)">Abort !</a>
+      </div>
+
+      <div class="state3"><h1>Lift Off!!!</h1></div>
+
+      <div class="state4">
+        <h1>Well Done !</h1>
+        <a href="#" class="button" onclick="changeState(1)">Do It Again</a>
+      </div>
+
+      <div class="state5">
+        <h1>Oh No !!</h1>
+        <a href="#" class="button" onclick="changeState(1)">Try Again</a>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="green_ground"></div>
+      <div class="rocket"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
