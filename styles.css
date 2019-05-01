@@ -7,12 +7,15 @@ html {
   font-family: 'roboto';
   box-sizing: border-box;
   font-family: 'Bungee', cursive;
-  text-align: center;
 }
 
 .left {
   position: fixed;
-  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 35%;
   height: 100vh;
   background-color: aqua;
   top: 0;
@@ -21,37 +24,34 @@ html {
 
 .right {
   position: fixed;
-  width: 50%;
+  width: 65%;
   height: 100vh;
-  background-color: black;
+  background: url('img/stars_background.png') no-repeat center/cover;
   top: 0;
   right: 0;
 }
 
-.left h1 {
+/* .left h1 {
   position: absolute;
   font-size: 2.2rem;
   top: 25%;
   left: 25%;
   transform: translate(-20%, -20%);
-}
+} */
 
 .left a {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
-  padding: 15px;
   text-decoration: none;
-  text-transform: capitalize;
+  color: crimson;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: center;
 }
 
 .left a:hover {
-  transition: 0.5s;
-  -webkit-box-shadow: 0 10px 6px -6px #777;
-  -moz-box-shadow: 0 10px 6px -6px #777;
-  box-shadow: 0 10px 6px -6px #777;
+  transition: 0.3s;
+  -webkit-box-shadow: 0 5px 3px -3px #777;
+  -moz-box-shadow: 0 5px 3px -3px #777;
+  box-shadow: 0 5px 3px -3px #777;
 }
 
 body.body-state1 .rocket {
@@ -60,7 +60,20 @@ body.body-state1 .rocket {
 
 body.body-state3 .rocket,
 body.body-state4 .rocket {
-  bottom: 1000px;
+  bottom: 1500px;
+}
+
+body.body-state2 .rocket {
+  background: url('img/rocket-state2.gif');
+}
+
+body.body-state3 .rocket,
+body.body-state4 .rocket {
+  background: url('img/rocket-state3.gif');
+}
+
+body.body-state5 .rocket {
+  background: url('img/boom.png');
 }
 
 .state1,
@@ -94,15 +107,45 @@ body.body-state5 .state5 {
   width: 100%;
   height: 40px;
   background: url(img/ground.png);
-  background-size: cover;
 }
 
 .rocket {
   position: absolute;
   left: 50%;
-  bottom: 20px;
-  width: 20px;
-  height: 100px;
-  background-color: #fff;
+  transform: translate(-50%);
+  bottom: 0;
+  width: 150px;
+  height: 270px;
+  background: url('img/rocket-state1.png') no-repeat center/cover;
   transition: bottom 10s;
+}
+
+.nervous {
+  position: absolute;
+  bottom: 220px;
+  left: 50%;
+  background: url('img/nervous.png');
+  width: 223px;
+  height: 100px;
+  margin-left: -200px;
+  display: none;
+}
+
+.nervous.show {
+  display: block;
+}
+
+.cant_wait {
+  position: absolute;
+  bottom: 220px;
+  left: 50%;
+  background: url('img/cant-wait.png') no-repeat;
+  width: 206px;
+  height: 65px;
+  margin-right: 200px;
+  display: none;
+}
+
+.cant_wait.show {
+  display: block;
 }
