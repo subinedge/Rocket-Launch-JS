@@ -14,10 +14,26 @@ var changeState = function(state) {
       countDownReducer--;
       document.getElementById('countDown').textContent = countDownReducer;
 
+      if (countDownReducer > 3 && countDownReducer < 5) {
+        //nervous image
+        document.getElementById('nervous').className = 'nervous show';
+      } else {
+        //remove the class show after the timer
+        document.getElementById('nervous').className = 'nervous';
+      }
+
+      if (countDownReducer > 5 && countDownReducer < 8) {
+        //cant wait image
+        document.getElementById('cant_wait').className = 'cant_wait show';
+      } else {
+        //remove the class show after the timer
+        document.getElementById('cant_wait').className = 'cant_wait';
+      }
+
       if (countDownReducer <= 0) {
         changeState(3);
       }
-    }, 300);
+    }, 1000);
   } else if (state == 3) {
     var success = setTimeout(function() {
       var randomNumber = Math.round(Math.random() * 10);
